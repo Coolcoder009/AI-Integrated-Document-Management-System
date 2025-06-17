@@ -1,0 +1,167 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  position: fixed; 
+  width: 240px;
+  background-color: #F8F8F8;
+  color: #000000; 
+  padding: 20px;
+  height: 100vh;
+  font-size: 10px;
+  font-family: 'Quicksand', sans-serif; 
+  font-size: smaller;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.sidebar-logo h2 {
+  font-size: 24px; 
+  font-weight: 600; 
+  color: #000000; 
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.logo-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 20px;
+}
+
+.sidebar-link {
+  color: #000000; 
+  text-decoration: none;
+  font-size: 16px;
+  font-size: 1.2rem;
+  padding: 12px;
+  display: flex;
+  align-items: center; 
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.sidebar-item.active .sidebar-link {
+  color: #EB1934; 
+  font-weight: 500;
+}
+
+.sidebar-item.new .sidebar-link {
+  border: 2px solid #EB1934; 
+  padding: 8px; 
+  border-radius: 6px;
+  font-weight: 500;
+  color: #EB1934; 
+}
+
+.menu-icon {
+  width: 24px; 
+  height: 24px;
+  margin-right: 16px;
+}
+
+.sidebar-item.active .sidebar-link,
+.sidebar-item:hover .sidebar-link {
+  background-color: #EFF6FF;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding-top: 225px;
+  margin-top: 20px;
+}
+
+.user-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-message {
+  font-size: 12px;
+  color: #EB1934;
+}
+
+.username {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+.caret-icon {
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.caret-container {
+  position: relative;
+}
+
+.caret-icon {
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  top: -10%; /* Adjust to position below the caret icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fcfbfb; /* Dark background */
+  color: #EB1934; /* White text */
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent; /* Triangle pointing up */
+}
+
+.caret-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}

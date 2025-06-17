@@ -1,0 +1,217 @@
+*::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari */
+}
+
+.home {
+  padding: 24px;
+}
+
+
+/* Search Bar Styles */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 250px;
+  padding-left: 253px;
+}
+
+.search-bar {
+  position: relative;
+  width: 580px;
+  height: 40px;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px 10px 40px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #EB1934;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.button-icon {
+  cursor: pointer;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 20px;
+  margin-left: 253px;
+  display: flex;
+  align-items: center;
+}
+.view-all {
+  color: #EB1934;
+  text-decoration: underline;
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Folder Grid and Card Styling */
+.folder-grid {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-left: 253px;
+  justify-content: flex-start; /* Align to the start */
+}
+
+.folder-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 14px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* No need for centered content */
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+}
+
+.folder-icon img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.folder-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  white-space: nowrap; /* Single line */
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+.folder-details {
+  font-size: 10px;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.folder-date {
+  color: #EB1934;
+}
+
+.folder-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #888;
+}
+
+/* File Grid and Card Styling */
+.file-grid {
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-left: 253px;
+  padding-bottom: 20px;
+  justify-content: flex-start; /* Align to the start */
+}
+
+.file-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 14px;
+  width: 150px;
+  height: 200px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures consistent spacing */
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.file-thumbnail img {
+  max-width: 100%;
+  max-height: 120px; /* Consistent image size */
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block;
+  margin: auto; /* Center the image */
+  border-radius: 4px;
+}
+
+.file-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  text-align: flex-start; /* Center-align text */
+  white-space: nowrap; /* Single-line text */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long names */
+  width: 100%; /* Ensure truncation respects card width */
+}
+
+.file-details {
+  font-size: 10px;
+  color: #888;
+  display: flex;
+  justify-content: space-between; /* Aligns date and options */
+  align-items: center;
+  width: 100%; /* Ensures proper alignment */
+}
+
+.file-date {
+  color: #EB1934;
+}
+
+.file-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #888;
+}
+
+.more-options-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding-left: 22px;
+}
+
+/* Hover Effects */
+.file-card:hover, .folder-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}

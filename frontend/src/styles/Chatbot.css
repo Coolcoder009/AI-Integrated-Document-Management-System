@@ -1,0 +1,450 @@
+src/styles/chatbot.css
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* This ensures vertical alignment */
+  padding: 8px 30px; /* Increased padding for better visual spacing */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.animated-text {
+  display: inline-block;
+  font-size: 24px; /* Adjust as per your design */
+  font-weight: bold;
+  color: #333; /* Change color if needed */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 13px;
+  color: #000;
+  font-weight: 100; /* Lighter font weight */
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+
+.title img {
+  margin-right: 10px; /* Space between logo and text */
+  width: 29px; /* Adjust the size as needed */
+  vertical-align: middle; /* Align the logo vertically with the text */
+}
+
+.docs-link {
+  text-align: right;
+  display: flex;
+  align-items: center; /* Ensures 'View all docs' is vertically aligned */
+}
+
+.view-all-docs {
+  background-color: #ffffff;
+  color: #f28996;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 2px solid #f28996;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+/* src/styles/chatbot.css */
+.file-upload-area {
+  border: 2px dashed #D0D5DD; /* Updated border color */
+  padding: 20px;
+  text-align: center;
+  width: 23%; /* Adjust width to not be full width */
+  margin: 20px auto; /* Center the box horizontally */
+  background-color: #f9f9f9; /* Light grey background */
+}
+
+.file-upload-area img {
+  width: 50px; /* Adjust size as needed */
+  margin-bottom: 10px;
+}
+
+.upload-instructions {
+  font-size: 15px;
+  color: #292D32;
+  margin-bottom: 5px; /* Adjusted spacing */
+  font-weight: 1000;
+}
+
+.supported-formats {
+  font-size: 13px;
+  color: #292D32;
+  margin-bottom: 20px;
+}
+
+.upload-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.upload-buttons button {
+  background-color: #ffffff;
+  color: #F15E71;
+  border: 2px solid #F15E71;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upload-buttons button:hover {
+  background-color: #D0D5DD; /* Darker red on hover */
+}
+
+.query-input {
+  bottom: 5px; /* Adjusted to be 5px from the bottom */
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers content horizontally */
+  padding: 8px 25px; /* Padding adjusted for aesthetics */background-color: #FFFFFF; /* Ensuring the background is white */
+  border: 2px solid #E2E8F0; /* Light grey border */
+  border-radius: 12px; /* Rounded corners */
+  margin: 25px 350px;
+}
+
+.query-input input {
+  flex-grow: 1;
+  border: none; /* Removing internal border */
+  outline: none; /* Removing focus outline */
+  padding: 8px 10px; /* Sufficient padding for text */
+  font-size: 16px; /* Matching font size */
+  color: #3f3f3f; /* Light text color */
+}
+
+.query-input img {
+  height: 18px ; /* Standardizes the height of the icons */
+  margin-bottom: -2px;
+  cursor: pointer; /* Changes cursor to pointer to indicate clickable */
+}
+
+.query-input button {
+  background: transparent;
+  border: none;
+  color: #F2899680;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.query-input button img {
+  height: 33px; /* Standardizes the height of the send icon */
+}
+
+.message {
+  padding: 10px;
+  margin: 10px 170px;
+  border-radius: 8px; /* Rounded corners for the message box */
+  box-sizing: border-box; /* Includes padding and border in width calculation */
+  display: flex; /* Changes from inline-block to flex for better control */
+  justify-content: flex-end; /* Adjust this for message alignment */
+  word-wrap: break-word; /* Ensures text wraps within the container */
+  word-break: keep-all;; /* Ensures text breaks avoiding overflow */
+  max-width: calc(65% - 340px); /* Adjust this as per your visual requirement */
+  text-align: justify; /* Justifies the text within the message */
+  
+  color: #000000; 
+}
+
+.message.user {
+  background-color: #ffffff;
+  border: 1px solid #fddde0;
+  color: #000000;
+  align-self: flex-end;
+  position: relative;
+  padding: 10px;
+  border-radius: 8px;
+  word-wrap: break-word; /* Ensure words wrap within the box */
+}
+
+.message.user::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 4px;
+  background-color: #F28996;
+  border-radius: 0 8px 8px 0;
+}
+
+
+.message.bot {
+  align-self: flex-start; /* Align bot messages to the left */
+  display: flex;
+  align-items: flex-start; /* Ensure the icon aligns with the first line */
+  padding: 10px;
+  border-radius: 8px; /* Consistency in design */
+  margin: 10px 170px;
+}
+
+.chat-messages {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.message.bot img {
+  margin-right: 15px; /* Space between bot icon and text */
+  width: 30px; /* Adjust size according to your preference */
+  align-self: flex-start; /* Aligns the icon with the first line of text */
+}
+
+.message a {
+  color: #007bff; /* Example blue link color */
+  text-decoration: none; /* No underline by default */
+}
+.message a:hover {
+  text-decoration: underline; /* Underline on hover for better user feedback */
+}
+
+.chat-messages.blurred {
+  filter: blur(8px);
+}
+
+.document-panel {
+  position: fixed;
+  width:568px;
+  height: 768px;
+  right: 0;
+  top: 0;
+  width: 45%; /* Adjust based on your design */
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* Organizes the header and list into a column */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.panel-header {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #eaecef; /* Adds a subtle separator */
+}
+  
+.panel-title {
+  font-size: 24px; /* Larger font size for visibility */
+  font-weight: bold; /* Bold for emphasis */
+  color: #333; /* Darker color for better contrast */
+}
+
+.panel-header button {
+  background-color: #ffffff;  /* Set background color to white */
+  border: none;               /* Remove any borders */
+  cursor: pointer;            /* Cursor to pointer to indicate clickable */
+  padding: 5px;               /* Padding around the button */
+  display: flex;              /* Ensures contents are centered */
+  align-items: center;        /* Center alignment of the icon */
+  justify-content: center;    /* Center justification of the icon */
+}
+
+.panel-header button:hover {
+  background-color: #f0f0f0;  /* Slightly different background on hover */
+}
+
+.document-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Space between items */
+  padding: 20px;
+}
+
+.document-item {
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  justify-content: space-between; /* Space between name and date */
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 250px; /* Fixed height */
+  text-align: center; /* Center content */
+}
+
+.document-preview {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* Scale image to fit */
+  margin-bottom: 8px; /* Space below the preview */
+}
+
+.file-info {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack name and date */
+}
+
+.file-info a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; /* Document name color */
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Truncate long names */
+}
+
+.file-info a:hover {
+  text-decoration: underline;
+}
+
+.file-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+}
+
+.document-name {
+  flex-grow: 1;
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Ensure it fits within the box */
+}
+
+.date-options {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.document-date {
+  color: red;
+}
+
+.document-date {
+  font-size: 14px;
+  color: #777; /* Subtle color for the date */
+  margin-top: auto; /* Push date to the bottom */
+}
+
+.document-options {
+  padding: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.pdf-viewer-container {
+  width: 100%;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-right: 5px; /* Adds space between the button and the edge */
+}
+
+.close-button img {
+  width: 24px; /* Adjust icon size */
+  height: 24px;
+}
+
+
+.close-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.close-button:hover img {
+  opacity: 0.8;
+}
+.message.user a {
+  color: #007bff; /* Blue link */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.message.user a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.message img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.message.user {
+  align-self: flex-end;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+  margin: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+  margin: 5px 10px;
+}

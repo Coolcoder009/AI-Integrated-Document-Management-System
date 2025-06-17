@@ -1,0 +1,224 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  /* Main full-screen container */
+  .main-container {
+    width: 90vw; /* Full screen width */
+    height: 90vh; /* Full screen height */
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    display: flex;
+    border-radius: 8px; /* Rounded corners for the main container */
+    background-color: #f4f4f4;
+    box-shadow: 0px 4px 16px rgba(228, 28, 28, 0.1); /* Optional shadow */
+    overflow: hidden;
+  }
+  
+  /* Left image container */
+  .image-container {
+    flex: 1; /* Take available space in the left side */
+    background: url('C:\Users\dgcon\Downloads\Personal\Projects\AI-Integrated-Document-Management-System\frontend\src\Assets\login bg.svg') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the container */
+  }
+  
+  /* Right login form container */
+  .login-container {
+    width: 400px; /* Set width for login form */
+    padding: 80px 30px; /* Adjust padding for better alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    box-shadow: #EB1934; /* Shadow for separation */
+    border-left: 1px solid #ddd; /* Optional border for separation */
+  }
+  
+  /* Login form content */
+  .login-form {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto; /* Center the form inside the login-container */
+  }
+  
+  .login-form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    color: #aaa;
+    outline: none;
+  }
+  
+  .tab-button.active {
+    color: #EB1934;
+    border-bottom: 2px solid #EB1934;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none; /* Remove the default outline */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.input-group input:focus {
+    border-color: #EB1934; /* Change border color on focus */
+}
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .checkbox-group input {
+    margin-right: 5px;
+  }
+  
+  .links {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .links a {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  .sign-in-button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .sign-in-button:hover {
+    background-color: darkred;
+  }
+  
+  .signup-link {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 15px;
+  }
+  
+  .signup-link a {
+    color: #EB1934;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+
+  .password-group {
+    position: relative;
+}
+
+.password-group input[type="password"],
+.password-group input[type="text"] {
+    width: 100%;
+    padding-right: 10px; /* Add padding to the right for the icon */
+}
+
+.show-password-button {
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.show-password-button img {
+    width: 16px;
+    height: 16px;
+    padding-left: 60px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 18px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: r#EB1934; /* Change this color to your desired active color */
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}

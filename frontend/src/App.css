@@ -1,0 +1,12 @@
+
+
+.app {
+  display: flex;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

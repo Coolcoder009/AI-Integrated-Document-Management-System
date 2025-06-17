@@ -1,0 +1,134 @@
+/* src/styles/FileViewer.css */
+
+.files-viewer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between each file card */
+    padding: 0 24px; /* Left and right padding only */
+    margin-left: 253px; /* Aligns with sidebar */
+    padding-top: 12px; /* Adds 20px space from the top */
+  }
+
+  .files-info {
+    display: flex;
+    flex-direction: column; /* Arrange children (name and details) in a column */
+    align-items: flex-start; /* Align content to the start of the container */
+    justify-content: space-between; /* Maintain spacing between elements */
+    width: 100%;
+    text-align: left; /* Ensure text alignment is left-aligned */
+  }
+
+  .search-bars {
+    position: fixed; /* Keeps the search bar fixed at the top */
+    top: 45px; /* Position it 24px from the top */
+    left: 300px; /* Align with sidebar */
+    width: 580px;
+    height: 40px;
+    z-index: 10; /* Ensure it stays on top */
+  }
+
+  .files-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 14px;
+    width: 150px;
+    height: 200px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures consistent spacing */
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .files-thumbnail img {
+    max-width: 100%;
+    max-height: 120px; /* Consistent image size */
+    object-fit: contain; /* Maintain aspect ratio */
+    display: block;
+    margin: auto; /* Center the image */
+    border-radius: 4px;
+  }
+  
+  .files-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    text-align: left; /* Left-align text */
+    white-space: nowrap; /* Single-line text */
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Add ellipsis for long names */
+    width: 100%; /* Ensure truncation respects card width */
+    align-self: flex-start; /* Align the text to the start of the container */
+  }
+  
+  .files-details {
+    font-size: 10px;
+    color: #888;
+    display: flex;
+    justify-content: space-between; /* Align date and options */
+    align-items: center; /* Ensure proper vertical alignment */
+    width: 100%; /* Ensures proper alignment */
+    margin-top: auto; /* Push this section to the bottom of the card */
+  }
+  
+  .files-date {
+    color: #EB1934;
+    margin-right: auto; /* Push the date to the left */
+  }
+  
+  .files-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #888;
+  }
+  
+  .more-options-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    padding-left: 22px;
+  }
+  
+
+  .options-container {
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 8px 0;
+  }
+  
+  .options-menu {
+    width: 190px;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+  }
+  
+  .menu-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .files-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+  }

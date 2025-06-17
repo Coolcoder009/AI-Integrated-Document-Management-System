@@ -1,0 +1,89 @@
+/* src/styles/FilterPanel.css */
+
+.filter-panel {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px #d4cccc;
+    transition: right 0.3s ease; /* Smooth slide */
+    z-index: 100;
+    padding: 20px;
+  }
+  
+  .filter-panel.open {
+    right: 0; /* Slide in */
+  }
+  
+  .filter-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .filter-panel-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .filter-options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Date Picker Container */
+  .date-input-container {
+    margin-top: 10px;
+  }
+  
+  /* Customize Date Input */
+  .date-picker {
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+  }
+  
+  .date-input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px; /* Space for calendar icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* Calendar Icon inside Date Input */
+  .calendar-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  /* Customize focus border to red */
+  .date-input:focus {
+    border-color: #EB1934;
+  }
+  
+  /* Style selected date input to have red border */
+  .react-datepicker__input-container input:focus {
+    border-color: #EB1934 !important;
+  }
+  
+  /* Red radio button when selected */
+  input[type="radio"]:checked {
+    accent-color: #EB1934;
+  }
+  
