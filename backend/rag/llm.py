@@ -1,39 +1,55 @@
 from langchain.chains import RetrievalQA
+
+import os
+from anthropic import Anthropic
+from dotenv import load_dotenv
 from rag.embeddings import embeddings
 from rag.qdrant_utils import client
+
+load_dotenv()
+
 from langchain_huggingface import HuggingFaceEndpoint
 from langchain_qdrant import Qdrant
 
 # Initialize the LLM
 repo_id = "Qwen/Qwen2.5-Coder-32B-Instruct"
 
+client_anthropic = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 llm = HuggingFaceEndpoint(repo_id=repo_id, temperature=0.7,max_new_tokens=10)
 # Function to query the LLM using the chat's collection
 def query_llm(chat_name, query_text):
+    # Step 1: Get relevant documents from Qdrant
     vector_store = Qdrant(client=client, collection_name=chat_name, embeddings=embeddings)
+    retriever = vector_store.as_retriever()
+    docs = retriever.get_relevant_documents(query_text)
 
-    # Define a custom prompt
-    strict_prompt = (
-        "You are a knowledgeable assistant. Your responses should only be based on "
-        "the content available in the vector store. If the query does not relate "
-        "to the available content or you do not find relevant information, respond with 'Your query does not match the context!'. "
-        "Do not use any external information that is not from the vector store.\n"
+    if not docs:
+        return "Your query does not match the context!"
+
+    # Step 2: Extract context text
+    context_text = "\n\n".join(doc.page_content for doc in docs)
+
+    # Step 3: Claude call using messages API
+    response = client_anthropic.messages.create(
+        model="claude-3-opus-20240229",
+        max_tokens=1024,
+        temperature=0,
+        system=(
+            "You are a knowledgeable assistant. Only answer using the given context. "
+            "If the question is unrelated or the context doesn't help, respond with: "
+            "'Your query does not match the context!'"
+        ),
+        messages=[
+            {
+                "role": "user",
+                "content": f"Context:\n{context_text}\n\nQuestion: {query_text}"
+            }
+        ]
     )
 
-    # Prepend the strict prompt to the user's query
-    full_query = strict_prompt + query_text
+    return {"result": response.content[0].text.strip()}
 
-    # Create the RetrievalQA chain
-    qa_chain = RetrievalQA.from_chain_type(
-        llm=llm,
-        chain_type="stuff",
-        retriever=vector_store.as_retriever()
-    )
-
-    response = qa_chain.invoke(full_query)
-    
-    return response
 
 def classify_document_content(document_text):
     try:
